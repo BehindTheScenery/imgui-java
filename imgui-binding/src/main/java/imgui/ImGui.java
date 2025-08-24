@@ -2934,4 +2934,31 @@ public class ImGui {
      */
     @BindingMethod
     public static native ImGuiViewport FindViewportByPlatformHandle(@ArgValue(callPrefix = "(void*)") long platformHandle);
+
+    @BindingMethod
+    public static native void BeginHorizontal(String str_id, @OptArg(callValue = "ImVec2(0,0)") ImVec2 size, @OptArg float align);
+
+    @BindingMethod
+    public static native void BeginHorizontal(int id, @OptArg(callValue = "ImVec2(0,0)") ImVec2 size, @OptArg float align);
+
+    @BindingMethod
+    public static native void EndHorizontal();
+
+    @BindingMethod
+    public static native void BeginVertical(String str_id, @OptArg(callValue = "ImVec2(0,0)") ImVec2 size, @OptArg float align);
+
+    @BindingMethod
+    public static native void BeginVertical(int id, @OptArg(callValue = "ImVec2(0,0)") ImVec2 size, @OptArg float align);
+
+    @BindingMethod
+    public static native void EndVertical();
+
+    @BindingMethod
+    public static native void Spring(@OptArg float weight, @OptArg float spacing);
+
+    @BindingMethod
+    public static native void SuspendLayout();
+
+    @BindingMethod
+    public static native void ResumeLayout();
 }
