@@ -2,13 +2,20 @@ import tool.generator.ast.task.GenerateAst
 
 import java.text.SimpleDateFormat
 
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'co.uzzu.dotenv.gradle' version "4.0.0"
+}
+
 ext {
     lwjglVersion = '3.3.4'
 }
 
 allprojects {
     group = 'imgui-java'
-    version = 'git describe --tags --always'.execute().text.trim().substring(1)
+//    version = 'git describe --tags --always'.execute().text.trim().substring(1)
+    version = imguiVersion
 
     repositories {
         mavenCentral()

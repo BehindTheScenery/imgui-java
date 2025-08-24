@@ -12,13 +12,14 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
     publishing {
         repositories {
             maven {
-                name = 'MavenCentral'
-                def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
-                def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots'
+                name = 'BTSMaven'
+                def releasesRepoUrl = 'http://lategame.net/nexus/repository/maven-releases/'
+                def snapshotsRepoUrl = 'http://lategame.net/nexus/repository/maven-snapshots/'
                 url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+                allowInsecureProtocol = true
                 credentials {
-                    username = System.getenv('NEXUS_UPD_ID')?.trim() ?: ''
-                    password = System.getenv('NEXUS_UPD_PASS')?.trim() ?: ''
+                    username = env.fetchOrNull("_USERNAME")
+                    password = env.fetchOrNull("_PASSWORD")
                 }
             }
         }
@@ -35,7 +36,7 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
                 pom {
                     name = packageName
                     description = packageDesc
-                    url = 'https://github.com/SpaiR/imgui-java'
+                    url = 'https://github.com/BehindTheScenery/imgui-java/'
                     licenses {
                         license {
                             name = 'MIT License'
@@ -48,11 +49,16 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
                             name = 'Ilya Prymshyts'
                             email = 'despsolver@gmail.com'
                         }
+                        developer {
+                            id = 'Sixik'
+                            name = "Bogdan Beloshkurenko"
+                            email = "bogdan.beloshkurenko@gmail.com"
+                        }
                     }
                     scm {
-                        connection = 'scm:git:https://github.com/SpaiR/imgui-java.git'
-                        developerConnection = 'scm:git:https://github.com/SpaiR/imgui-java.git'
-                        url = 'https://github.com/SpaiR/imgui-java.git'
+                        connection = 'scm:git:https://github.com/BehindTheScenery/imgui-java.git'
+                        developerConnection = 'scm:git:https://github.com/BehindTheScenery/imgui-java.git'
+                        url = 'https://github.com/BehindTheScenery/imgui-java.git'
                     }
                 }
             }
