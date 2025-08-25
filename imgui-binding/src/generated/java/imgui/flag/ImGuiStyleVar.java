@@ -162,5 +162,7 @@ public final class ImGuiStyleVar {
      */
     public static final int DockingSeparatorSize = 28;
 
-    public static final int COUNT = 29;
+    public static final int LayoutAlign = 29;
+
+    public static final int COUNT = 30;
 }

@@ -11663,10 +11663,16 @@
       "evaluatedValue" : 28
     }, {
       "@type" : "AstEnumConstantDecl",
-      "name" : "ImGuiStyleVar_COUNT",
+      "name" : "ImGuiStyleVar_LayoutAlign",
       "qualType" : "ImGuiStyleVar_",
       "order" : 29,
       "evaluatedValue" : 29
+    } , {
+      "@type" : "AstEnumConstantDecl",
+      "name" : "ImGuiStyleVar_COUNT",
+      "qualType" : "ImGuiStyleVar_",
+      "order" : 30,
+      "evaluatedValue" : 30
     } ]
   }, {
     "@type" : "AstEnumDecl",
